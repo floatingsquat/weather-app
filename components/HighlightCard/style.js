@@ -23,7 +23,7 @@ const Image = styled.img`
   margin-right: 0.5rem;
   transition: transform 1s ease;
   margin: auto;
-  transform: ${(props) => `rotate(${props.direction}deg)`};
+  transform: ${(props) => `rotate(${props.wind_deg}deg)`};
 `;
 const Title = styled.h2`
   font-style: normal;

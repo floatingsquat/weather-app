@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-bottom: 58px;
 `;
 
-const ListItem = styled.div`
+const ListItem = styled.button`
   display: flex;
   align-items: center;
   font-style: normal;
@@ -18,6 +18,8 @@ const ListItem = styled.div`
   line-height: 19px;
   height: 64px;
   width: 100%;
+  background-color: transparent;
+  border: 0;
   color: #e7e7eb;
   padding-top: 22px;
   padding-bottom: 22px;

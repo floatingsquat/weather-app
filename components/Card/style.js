@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 const Card = styled.div`
   display: flex;
@@ -19,10 +20,9 @@ const Date = styled.div`
   text-align: center;
   color: #e7e7eb;
 `;
-const Image = styled.span`
+const Icon = styled(Image)`
   height: 100%;
   width: 50%;
-  background: url("Sleet.png");
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 10px;
@@ -49,4 +49,4 @@ const Night = styled.span`
   color: #a09fb1;
 `;
 
-export { Card, Date, Image, TempWrapper, Day, Night };
+export { Card, Date, Icon, TempWrapper, Day, Night };

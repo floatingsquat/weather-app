@@ -9,15 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^2.0.7",
+    "@reduxjs/toolkit": "^1.8.2",
+    "axios": "^0.27.2",
     "next": "12.1.6",
+    "next-redux-wrapper": "^7.0.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
     "react-query": "^3.39.1",
     "react-redux": "^8.0.2",
-    "redux": "^4.2.0",
-    "redux-thunk": "^2.4.1",
     "sass": "^1.52.1",
     "styled-components": "^5.3.5"
   },
@@ -25,11 +25,12 @@
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6"
   },
-
-"babel": {
+  "babel": {
     "env": {
       "development": {
-        "presets": ["next/babel"],
+        "presets": [
+          "next/babel"
+        ],
         "plugins": [
           [
             "styled-components",
@@ -41,7 +42,9 @@
         ]
       },
       "production": {
-        "presets": ["next/babel"],
+        "presets": [
+          "next/babel"
+        ],
         "plugins": [
           [
             "styled-components",
@@ -54,5 +57,4 @@
       }
     }
   }
-
 }

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { breakPoint } from "../../utils/breakpoints";
+import Image from "next/image";
 
 const flexCenter = css`
   display: flex;
@@ -12,7 +13,7 @@ const Sidebar = styled.div`
   flex-direction: column;
   background: #1e213a;
   padding-top: 42px;
-  width: 35%;
+  width: 25%;
   height: 100%;
   min-height: 1024px;
   height: auto;
@@ -79,11 +80,10 @@ const ImgWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: 130%;
 `;
-const ConditionImg = styled.span`
+const ConditionImg = styled(Image)`
   width: 202px;
   height: 234px;
   margin-top: 109px;
-  background: url("LightRain.png");
   background-repeat: no-repeat;
   border: 0;
 `;

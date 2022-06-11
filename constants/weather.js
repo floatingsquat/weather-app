@@ -1,4 +1,4 @@
-const weatherImages = {
+const WEATHER_IMAGES = {
   Snow: "Snow.png",
   Sleet: "Sleet.png",
   Hail: "Hail.png",
@@ -11,9 +11,11 @@ const weatherImages = {
   Clear: "Clear.png",
 };
 
-const temperatureUnits = {
+const DEFAULT_TEMPERATURE_UNITS = {
   celsius: "℃",
   fahrenheit: "℉",
 };
 
-export { weatherImages, temperatureUnits };
+const DEFAULT_SEARCH_QUERY = "istanbul";
+const DEFAULT_DAILY_CARD_AMOUNT = 5;
+export { WEATHER_IMAGES, DEFAULT_TEMPERATURE_UNITS, DEFAULT_SEARCH_QUERY };

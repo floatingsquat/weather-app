@@ -1,7 +1,8 @@
 import React from "react";
 import * as S from "./style";
 import ProgressBar from "../ProgressBar";
-function HighlightCard({ type, title, description, unit }) {
+import { getWindDirection } from "../../utils/getWindDirection";
+function HighlightCard({ type, title, description, unit, wind_deg }) {
   return (
     <S.HighlightCard type={type}>
       <S.Title>{title}</S.Title>
@@ -13,13 +14,13 @@ function HighlightCard({ type, title, description, unit }) {
       {type === "wind" ? (
         <S.Data>
           <S.ImgWrapper>
-            <S.Image src="wind-direction.svg" alt="wind" />
+            <S.Image src="wind-direction.svg" wind_deg={wind_deg} alt="wind" />
           </S.ImgWrapper>
-          <S.Span>TEST</S.Span>
+          <S.Span>{getWindDirection(wind_deg)}</S.Span>
         </S.Data>
       ) : type === "humidity" ? (
         <S.Data>
-          <ProgressBar />
+          <ProgressBar percentages={description} />
         </S.Data>
       ) : (
         " "
