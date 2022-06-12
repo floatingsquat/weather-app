@@ -1,19 +1,31 @@
+import { getWeatherData } from "../../features/weather/weatherSlice";
+import useFormatDate from "../../hooks/useFormatDate";
+import { formatLocation } from "../../utils/formatLocation";
+import { showWeatherImage } from "../../utils/showWeatherImage";
+import { kelvinToC, kelvinToF } from "../../utils/tempConverter";
+import { ToCapitalize } from "../../utils/toCapitalize";
+import CircleButton from "../CircleButton";
+import SearchBar from "../SearchBar";
 import * as S from "./style";
+import { useState } from "react";
 import { BiCurrentLocation } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
-import SearchBar from "../SearchBar";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { kelvinToC, kelvinToF } from "../../utils/tempConverter";
-import { formatLocation } from "../../utils/formatLocation";
-import { ToCapitalize } from "../../utils/toCapitalize";
-import useFormatDate from "../../hooks/useFormatDate";
-import { showWeatherImage } from "../../utils/showWeatherImage";
 
 function Sidebar() {
   const { items, tempUnit } = useSelector((state) => state.weather);
   const [searchVisible, setSearchVisible] = useState(false);
   const currentDay = useFormatDate();
+  const dispatch = useDispatch();
+  const weatherByLocation = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const geoLocation = {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+      };
+      dispatch(getWeatherData(geoLocation));
+    });
+  };
   return (
     <S.Sidebar>
       {!searchVisible ? (
@@ -22,17 +34,18 @@ function Sidebar() {
             <S.SearchBtn onClick={() => setSearchVisible(!searchVisible)}>
               Search for places
             </S.SearchBtn>
-            <S.LocationBtn>
+            <CircleButton onClick={weatherByLocation}>
               <BiCurrentLocation />
-            </S.LocationBtn>
+            </CircleButton>
           </S.Filter>
           <S.WeatherToday>
             <S.ImgWrapper>
               <S.ConditionImg
                 width={202}
                 height={200}
-                src={`/${showWeatherImage(items?.current?.weather[0].icon)}`}
-                // src={`/`}
+                src={`/assets/${showWeatherImage(
+                  items?.current?.weather[0].icon
+                )}`}
               />
             </S.ImgWrapper>
 

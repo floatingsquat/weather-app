@@ -1,4 +1,3 @@
-import React from "react";
 import * as S from "./style";
 import Head from "next/head";
 
@@ -7,7 +6,10 @@ function Layout({ children }) {
     <div>
       <Head>
         <title>Weather App</title>
-        <meta name="description" content="Weather app" />
+        <meta
+          name="description"
+          content="Weather app is an app that let you see weather forecast weekly."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import * as S from "./style";
-import { showWeatherImage } from "../../utils/showWeatherImage";
-import { useSelector } from "react-redux";
-import { kelvinToC, kelvinToF } from "../../utils/tempConverter";
 import useFormatDate from "../../hooks/useFormatDate";
+import { showWeatherImage } from "../../utils/showWeatherImage";
+import { kelvinToC, kelvinToF } from "../../utils/tempConverter";
+import * as S from "./style";
+import React from "react";
+import { useSelector } from "react-redux";
+
 function Card({ item }) {
   const { tempUnit } = useSelector((state) => state.weather);
 
@@ -13,7 +14,7 @@ function Card({ item }) {
       <S.Icon
         width={60}
         height={60}
-        src={`/${showWeatherImage(item.weather[0].icon)}`}
+        src={`/assets/${showWeatherImage(item.weather[0].icon)}`}
       />
       <S.TempWrapper>
         <S.Day>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { breakPoint } from "../utils/breakpoints";
 
 const ContentWrapper = styled.div`
   display: flex;

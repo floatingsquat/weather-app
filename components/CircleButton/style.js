@@ -18,6 +18,14 @@ const CircleButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+  svg {
+    color: #e7e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+  }
 `;
 
 export { CircleButton };

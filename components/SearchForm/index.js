@@ -1,13 +1,13 @@
-import React, { useState, useRef, useEffect } from "react";
-import * as S from "./style";
-import { AiOutlineClose } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
 import {
   getCoordinates,
   getWeatherData,
   setSearchQuery,
   setPrevSearchedItems,
 } from "../../features/weather/weatherSlice";
+import * as S from "./style";
+import React, { useState, useEffect } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
 
 function SearchForm({ setSearchVisible }) {
   const { searchQuery } = useSelector((state) => state.weather);
@@ -17,7 +17,6 @@ function SearchForm({ setSearchVisible }) {
   const onClickHandler = (e) => {
     e.preventDefault();
     dispatch(setPrevSearchedItems(query));
-    //dispatch(setSearchQuery(query));
     dispatch(getCoordinates(searchQuery)).then(() => {
       dispatch(getWeatherData());
     });

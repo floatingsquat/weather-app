@@ -5,7 +5,7 @@ const Percentages = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 230px;
 `;
 const Line = styled.span`
   color: #e7e7eb;

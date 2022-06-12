@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import Image from "next/image";
+import styled from "styled-components";
 
 const Card = styled.div`
   display: flex;
@@ -11,6 +11,11 @@ const Card = styled.div`
   width: 120px;
   height: 177px;
   background: #1e213a;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 const Date = styled.div`
   font-style: normal;

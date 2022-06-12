@@ -5,6 +5,8 @@ const HighlightCard = styled.div`
   justify-content: space-between;
   padding-top: 22px;
   padding-bottom: 22px;
+  padding-left: 10px;
+  padding-right: 10px;
   gap: 6px;
   flex-direction: column;
   align-items: center;
@@ -13,7 +15,7 @@ const HighlightCard = styled.div`
   height: ${(props) => (props.type ? "204px" : "160px")};
 
   @media (max-width: 809px) {
-    width: 100%;
+    width: 90%;
     height: auto;
   }
 `;

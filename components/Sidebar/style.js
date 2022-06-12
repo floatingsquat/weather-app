@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
 import { breakPoint } from "../../utils/breakpoints";
 import Image from "next/image";
+import styled, { css } from "styled-components";
 
 const flexCenter = css`
   display: flex;
@@ -13,7 +13,8 @@ const Sidebar = styled.div`
   flex-direction: column;
   background: #1e213a;
   padding-top: 42px;
-  width: 25%;
+  width: 35vw;
+  min-width: 300px;
   height: 100%;
   min-height: 1024px;
   height: auto;
@@ -43,25 +44,6 @@ const SearchBtn = styled.button`
     cursor: pointer;
   }
 `;
-const LocationBtn = styled.button`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 0;
-  background: rgba(255, 255, 255, 0.2);
-  margin-right: 55px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  &:hover {
-    cursor: pointer;
-  }
-  svg {
-    color: #e7e7eb;
-    ${flexCenter};
-    width: 28px;
-    height: 28px;
-  }
-`;
 
 const WeatherToday = styled.div`
   ${flexCenter};
@@ -75,7 +57,7 @@ const ImgWrapper = styled.div`
       rgba(30, 33, 58, 0.95) 100%,
       rgba(30, 33, 58, 0.95) 100%
     ),
-    url("Cloud-background.png");
+    url("assets/Cloud-background.png");
   background-position: 50% 20%;
   background-repeat: no-repeat;
   background-size: 130%;
@@ -140,7 +122,6 @@ export {
   Sidebar,
   Filter,
   SearchBtn,
-  LocationBtn,
   WeatherToday,
   ImgWrapper,
   ConditionImg,

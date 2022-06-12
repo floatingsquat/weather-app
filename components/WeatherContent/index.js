@@ -1,57 +1,46 @@
-import React, { useEffect } from "react";
-import Card from "../Card";
-import CircleButton from "../CircleButton";
-import HighlightCard from "../HighlightCard";
-import Footer from "../Footer";
-import * as S from "./style";
-
-import { useDispatch, useSelector } from "react-redux";
 import {
   getCoordinates,
   getWeatherData,
   setTempUnit,
 } from "../../features/weather/weatherSlice";
+import Card from "../Card";
+import CircleButton from "../CircleButton";
+import Footer from "../Footer";
+import HighlightCard from "../HighlightCard";
+import * as S from "./style";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 function WeatherContent() {
   const dispatch = useDispatch();
   const { searchQuery, tempUnit, items } = useSelector(
     (state) => state.weather
   );
   useEffect(() => {
-    console.log("itemmm", items);
     dispatch(getCoordinates(searchQuery)).then(() => {
       dispatch(getWeatherData());
     });
   }, []);
 
-  const setUnitOnClickHandler = (e) => {
-    dispatch(setTempUnit(e.target.innerHTML.replace("<!-- -->", "")));
-  };
   return (
     <S.Wrapper>
       <S.Header>
         <CircleButton
-          onClick={setUnitOnClickHandler}
+          onClick={() => dispatch(setTempUnit("℃"))}
           active={tempUnit === "℃" ? true : false}
         >
           ℃
         </CircleButton>
         <CircleButton
-          onClick={setUnitOnClickHandler}
+          onClick={() => dispatch(setTempUnit("℉"))}
           active={tempUnit === "℉" ? true : false}
         >
           ℉
         </CircleButton>
       </S.Header>
       <S.WeeklyWeather>
-        {items?.daily && (
-          <>
-            <Card item={items?.daily[0]} />
-            <Card item={items?.daily[1]} />
-            <Card item={items?.daily[2]} />
-            <Card item={items?.daily[3]} />
-            <Card item={items?.daily[4]} />
-          </>
-        )}
+        {items?.daily &&
+          [...Array(5)].map((e, i) => <Card key={i} item={items?.daily[i]} />)}
       </S.WeeklyWeather>
       <S.Title>Today’s Hightlights</S.Title>
       <S.WeatherDetail>

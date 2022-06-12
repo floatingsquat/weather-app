@@ -1,8 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { baseUrl, cityCordinates, weatherData } from "../../config/api";
-import axios from "axios";
+import { cityCordinates, weatherData } from "../../config/api";
 import * as Constant from "../../constants/weather";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
 const initialState = {
   searchQuery: Constant.DEFAULT_SEARCH_QUERY,
   coords: [],
@@ -15,7 +15,6 @@ const initialState = {
 export const getCoordinates = createAsyncThunk(
   "weather/getCoordinates",
   async (cityName) => {
-    console.log("getCoordinates async request");
     const res = await axios(cityCordinates(cityName));
     return res.data.coord;
   }
@@ -23,12 +22,17 @@ export const getCoordinates = createAsyncThunk(
 
 export const getWeatherData = createAsyncThunk(
   "weather/getWeatherData",
-  async (test, thunkAPI) => {
-    const lat = thunkAPI.getState().weather.coords.lat;
-    const lon = thunkAPI.getState().weather.coords.lon;
-    console.log("getWeatherData async request", lat, lon);
+  async (geoLocation, thunkAPI) => {
+    let lat, lon;
+    if (geoLocation) {
+      // This is for geo location button on sidebar
+      lat = geoLocation.lat;
+      lon = geoLocation.lon;
+    } else {
+      lat = thunkAPI.getState().weather.coords.lat;
+      lon = thunkAPI.getState().weather.coords.lon;
+    }
     const res = await axios(weatherData(lat, lon));
-
     return res.data;
   }
 );
@@ -55,7 +59,6 @@ const weatherSlice = createSlice({
     [getCoordinates.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.coords = action.payload;
-      console.log(state.coords, " coords state'ine aktarıldı");
     },
     [getCoordinates.rejected]: (state) => {
       state.isLoading = false;

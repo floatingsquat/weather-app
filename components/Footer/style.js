@@ -10,9 +10,7 @@ const Footer = styled.div`
   line-height: 17px;
   text-align: center;
   color: #a09fb1;
-
   margin-top: auto;
-
   padding: 40px;
 `;
 export { Footer };

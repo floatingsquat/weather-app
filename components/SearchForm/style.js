@@ -32,20 +32,17 @@ const InputWrapper = styled.div`
 `;
 const Input = styled.input`
   box-sizing: border-box;
-  width: 268px;
+
+  width: 100%;
   height: 48px;
   border: 1px solid #e7e7eb;
-  padding-left: 40px;
+  padding-left: calc(1em + 10px + 8px);
   background: url("search-icon.svg") no-repeat left;
   background-size: 26px;
-  background-position-x: calc(7% - 10px);
+
   &:focus {
     outline: none;
     color: white;
-  }
-  @media (max-width: 809px) {
-    width: 100%;
-    padding-left: 60px;
   }
 `;
 const Button = styled.button`
