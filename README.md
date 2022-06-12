@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App
 
-## Getting Started
+Weather APP is a weather forecast application that you can search by country and city. While you can view the 5-day weather conditions of the region you want, you can also take a look at today's weather conditions such as humidity, wind speed, and air pressure.
 
-First, run the development server:
+This project is a challenge on the website [devchallenges.io](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Screenshots
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Project Image](/public/assets/screenshots/weather-app-1.jpg)
+![Project Image](/public/assets/screenshots/weather-app-2.jpg)
+![Project Image](/public/assets/screenshots/weather-app-3.jpg)
+![Project Image](/public/assets/screenshots/weather-app-4.jpg)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## My process
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Built with
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [React](https://reactjs.org/)
+- Next.js
+- Figma
+- Redux Toolkit
+- Styled Components
+- Axios
+- Flexbox
 
-## Learn More
+### What I learned
 
-To learn more about Next.js, take a look at the following resources:
+With this project, I learned the basics of Next.js and used the styled components library for the first time.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Useful resources
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Next.js](https://github.com/vercel/next.js/tree/canary/examples) - The github repository of Next.js has provided insights on many issues. (Folder structure, setting \_document.js page for styled components etc.)
+- [Styled Components](https://styled-components.com/docs) - The documentation page of styled components had everything I needed.
 
-## Deploy on Vercel
+## Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- GitHub - [@floatingsquat](https://github.com/floatingsquat)

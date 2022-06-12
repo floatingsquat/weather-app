@@ -37,7 +37,7 @@ const Input = styled.input`
   height: 48px;
   border: 1px solid #e7e7eb;
   padding-left: calc(1em + 10px + 8px);
-  background: url("search-icon.svg") no-repeat left;
+  background: url("assets/search-icon.svg") no-repeat left;
   background-size: 26px;
 
   &:focus {
