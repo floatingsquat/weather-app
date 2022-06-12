@@ -1,4 +1,3 @@
-import { breakPoint } from "../../utils/breakpoints";
 import Image from "next/image";
 import styled, { css } from "styled-components";
 

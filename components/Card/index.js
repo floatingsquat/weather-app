@@ -20,15 +20,15 @@ function Card({ item }) {
         <S.Day>
           {" "}
           {tempUnit === "℃"
-            ? kelvinToC(item.temp.min)
-            : kelvinToF(item.temp.min)}
+            ? kelvinToC(item.temp.max)
+            : kelvinToF(item.temp.max)}
           {tempUnit}
         </S.Day>
         <S.Night>
           {" "}
           {tempUnit === "℃"
-            ? kelvinToC(item.temp.max)
-            : kelvinToF(item.temp.max)}
+            ? kelvinToC(item.temp.min)
+            : kelvinToF(item.temp.min)}
           {tempUnit}
         </S.Night>
       </S.TempWrapper>
